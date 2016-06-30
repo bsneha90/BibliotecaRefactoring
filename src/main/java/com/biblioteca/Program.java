@@ -9,9 +9,7 @@ public class Program {
 
     public static void main(String[] args) {
         while (true) {
-            System.out.println("**********************************************************");
-            System.out.println("* Welcome to The Bangalore Public Library System - Biblioteca *");
-            System.out.println("**********************************************************");
+            displayLibraryName();
             System.out.println("*                Menu                                    *");
             System.out.println("*         =====================                          *");
             System.out.println("*         1. List Book Catalog                           *");
@@ -119,6 +117,12 @@ public class Program {
                 System.out.println("Enter a valid integer!!");
             }
         }
+    }
+
+    private static void displayLibraryName() {
+        System.out.println("**********************************************************");
+        System.out.println("* Welcome to The Bangalore Public Library System - Biblioteca *");
+        System.out.println("**********************************************************");
     }
 
     private static boolean validPassword(String password) {
