@@ -12,18 +12,10 @@ public class Program {
             DisplayLibraryName();
             showMenu();
             System.out.println("Your Selection: ");
-
             InputStreamReader inputStream = new InputStreamReader(System.in);
             BufferedReader reader = new BufferedReader(inputStream);
             int i1 = 0;
-            try {
-                String value = reader.readLine();
-                i1 = Integer.parseInt(value);
-            } catch (Exception e) {
-                // Do you know what numbers are!!!
-                System.out.println("Enter a valid integer!!");
-            }
-
+            i1 = getUserInput(reader, i1);
             if (i1 == 1) {
                 showBookNames();
             } else if (i1 == 2) {
@@ -68,6 +60,17 @@ public class Program {
                 System.out.println("Enter a valid integer!!");
             }
         }
+    }
+
+    private static int getUserInput(BufferedReader reader, int i1) {
+        try {
+            String value = reader.readLine();
+            i1 = Integer.parseInt(value);
+        } catch (Exception e) {
+            // Do you know what numbers are!!!
+            System.out.println("Enter a valid integer!!");
+        }
+        return i1;
     }
 
     private static void checkoutBook(BufferedReader reader) {
