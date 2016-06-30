@@ -99,6 +99,8 @@ public class ProgramTest {
         assertThat(outputStream.toString(), containsString("Pulp Fiction - Director: Quentin Tarantino Rating: 6"));
     }
 
+
+
     @Test
     public void successfull_log_in() {
         System.setOut(new PrintStream(outputStream));

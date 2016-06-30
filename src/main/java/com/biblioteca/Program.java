@@ -11,7 +11,7 @@ public class Program {
         while (true) {
             DisplayLibraryName();
             showMenu();
-            System.out.println("Your Selection: ");
+
             InputStreamReader inputStream = new InputStreamReader(System.in);
             BufferedReader reader = new BufferedReader(inputStream);
             int i1 = 0;
@@ -131,6 +131,7 @@ public class Program {
         System.out.println("*         5. Login                                       *");
         System.out.println("*         9. Exit                                        *");
         System.out.println("**********************************************************");
+        System.out.println("Your Selection: ");
     }
 
     private static void DisplayLibraryName() {
@@ -158,7 +159,7 @@ public class Program {
     }
 
     private static String createMovie(String movieTitle, String movieDirector, String movieRanking) {
-        return movieTitle + " - Director: " + movieDirector + " Rating: " + movieRanking;
+        return new Movie(movieTitle, movieDirector, movieRanking).getName();
     }
 }
 
