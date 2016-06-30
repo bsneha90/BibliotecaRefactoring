@@ -1,12 +1,10 @@
-package test;
-
-import main.Program;
+package com.biblioteca;
 import org.junit.After;
 import static org.junit.Assert.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.matchers.JUnitMatchers.containsString;
-import static test.StubbedInputStream.stubInputStream;
+import static com.biblioteca.StubbedInputStream.stubInputStream;
 
 import java.io.*;
 
@@ -27,7 +25,7 @@ public class ProgramTest {
     }
 
     @Test
-    public void show_the_name_of_the_library() throws IOException {
+    public void shoulDisplayLibraryName() throws IOException {
         System.setOut(new PrintStream(outputStream));
         System.setIn(stubInputStream().toReturn(EXIT_CODE).atSomePoint());
 
@@ -37,7 +35,7 @@ public class ProgramTest {
     }
 
     @Test
-    public void show_the_books_available_for_rental() throws IOException {
+    public void shouldShowTheBooksAvailableForRental() throws IOException {
         System.setOut(new PrintStream(outputStream));
         System.setIn(stubInputStream().toReturn(BOOK_LISTING).then(EXIT_CODE).atSomePoint());
 
